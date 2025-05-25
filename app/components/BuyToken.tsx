@@ -6,14 +6,13 @@ import { useEffect, useState } from 'react'
 import { parseUnits } from 'viem'
 import { useAccount, useBalance, useWaitForTransactionReceipt, useWriteContract } from 'wagmi'
 
-// Address of the ERC20Mock token on testnets from Inverter documentation
+
 const IUSD_TOKEN_ADDRESS = '0x065775C7aB4E60ad1776A30DCfB15325d231Ce4F' as `0x${string}`
 const CLSR_TOKEN_ADDRESS = '0x050c24F1e840f8366753469aE7a2e81D0794F8ef' as `0x${string}`
 
 const ORCHESTRATOR_ADDRESS = '0xbe29392B4010dA5A1DC515C2f42541584eb95B8C' as `0x${string}`
 const FUNDING_MANAGER_ADDRESS = '0x8616A376F8ABB7Db0C160ff2451E2b5E9ddB39E4' as `0x${string}`
 
-// Minimal ABI for ERC20 approve function
 const erc20Abi = [
   {
     "constant": false,
@@ -233,7 +232,7 @@ export default function BuyToken({ chainId, correctChain }: BuyTokenProps) {
 
       <div className="text-sm text-gray-600">
         <p>This component demonstrates fetching token balances and a CLSR/IUSD sale.</p>
-        <p className="font-bold text-orange-600">Note: The Funding Manager type is inferred as 'FM_BC_Bancor_Redeeming_VirtualSupply_v1' and the sale function as 'buy'. Adjust if incorrect.</p>
+        <p className="font-bold text-orange-600">Note: The Funding Manager type is inferred as FM_BC_Bancor_Redeeming_VirtualSupply_v1 and the sale function as BUY.</p>
       </div>
     </div>
   )
