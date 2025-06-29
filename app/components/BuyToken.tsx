@@ -187,8 +187,10 @@ export default function BuyToken({ chainId, correctChain }: BuyTokenProps) {
       
       console.log('[DEBUG] handleBuy: About to call workflow.data.fundingManager.write.buy.run with args:', [amountInWei.toString(), minReturnInClsrWei.toString()], 'and SDK callbacks');
       
+
+
       await workflow.data.fundingManager.write.buy.run(
-         [amountInWei.toString(), minReturnInClsrWei.toString()],
+        [iusdAmount, formatUnits(minReturnInClsrWei, clsrDecimals)],
          { 
            confirmations: 1,
            onHash: (hash) => {
